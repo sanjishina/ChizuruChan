@@ -20,6 +20,7 @@ PM_START_TEXT = """
 Hi {}, my name is {}!
 // I am an Anime themed group management bot with a lot of Special Features.
 You can find the list of available commands with /help.
+Base @LyndaRobot
 ==========================
 -> [Chizuru's's Repo](https://github.com/Yashiro-San/LyndaBot/)
 ==========================
@@ -53,7 +54,7 @@ LYNDA_IMG = "https://telegra.ph/file/e64727a2eefae8cc472fa.jpg"
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Lynda is hosted on one of Digital Ocean Servers. \
 You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/muhnurfauzan73), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+There are two ways of supporting him; [PayPal](paypal.me/muhnurfauzan73),."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -142,7 +143,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="👥 Add Chizuru to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
-                 [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/LyndaEagleSupport"), InlineKeyboardButton(text="🚫 Global Logs", url="https://t.me/LyndaGLogs")],
+                 [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/LyndaEagleSupport"), InlineKeyboardButton(text="🚫 Global Logs", url="http://t.me/ChizuruGbanLog")],
                  [InlineKeyboardButton(text="❔ Help", callback_data="help_back"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/LyndaUpdateLogs")]])
             message.reply_photo(
                 LYNDA_IMG,

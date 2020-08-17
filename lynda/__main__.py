@@ -52,7 +52,7 @@ And the following:
 LYNDA_IMG = "https://telegra.ph/file/e64727a2eefae8cc472fa.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-Lynda is hosted on one of Digital Ocean Servers. \
+Chizuru is hosted on one of Heroku. \
 You can donate to the original writer of the Base code, Paul
 There are two ways of supporting him; [PayPal](paypal.me/muhnurfauzan73),."""
 
@@ -142,7 +142,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="👥 Add Chizuru to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
+                [[InlineKeyboardButton(text="📱 Rent Chizuru to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
                  [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/LyndaEagleSupport"), InlineKeyboardButton(text="🚫 Global Logs", url="http://t.me/ChizuruGbanLog")],
                  [InlineKeyboardButton(text="❔ Help", callback_data="help_back"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/LyndaUpdateLogs")]])
             message.reply_photo(

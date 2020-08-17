@@ -12,7 +12,6 @@ def send_message(message, text, *args, **kwargs):
 def typing_action(func):
     """Sends typing action while processing func command."""
 
-    @wraps(func)
     def command_func(update, context, *args, **kwargs):
         context.bot.send_chat_action(
             chat_id=update.effective_chat.id, action=ChatAction.TYPING

@@ -18,8 +18,10 @@ from lynda.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 Hi {}, my name is {}!
-// I am an Anime themed group management bot with a lot of Special Features.
+
+I am an Anime themed group management bot with a lot of Special Features.
 You can find the list of available commands with /help.
+
 Base @LyndaRobot
 ==========================
 -> [Chizuru's's Repo](https://github.com/Yashiro-San/LyndaBot/)
@@ -30,9 +32,11 @@ Base @LyndaRobot
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a manajement group.
+I'm a management bot.
+
 Have a look at the following for an idea of some of \
 the things I can help you with.
+
 I'm managed by [Yashi](https://t.me/Yashiro404)
 Chatbot module from [TheRealPhoenixBot](https://github.com/rsktg/TheRealPhoenixBot.git)
 Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot)

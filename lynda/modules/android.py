@@ -6,8 +6,8 @@ from telegram.error import BadRequest
 from telegram.ext import run_async
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from stella import dispatcher, updater
-from stella.modules.disable import DisableAbleCommandHandler
+from lynda import dispatcher, updater
+from lynda.modules.disable import DisableAbleCommandHandler
 
 GITHUB = 'https://github.com'
 DEVICES_DATA = 'https://raw.githubusercontent.com/androidtrackers/certified-android-devices/master/by_device.json'

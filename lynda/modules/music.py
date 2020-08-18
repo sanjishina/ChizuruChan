@@ -5,9 +5,9 @@ from telegram.ext import CommandHandler, run_async, Filters
 import requests, logging
 from telegram.ext import Updater, MessageHandler, Filters, CommandHandler
 from telegram import Message, Chat, Update, Bot, MessageEntity
-from stella import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER
+from lynda import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from stella.modules.helper_funcs.chat_status import user_admin, sudo_plus
+from lynda.modules.helper_funcs.chat_status import user_admin, sudo_plus
 
 
 count = 0

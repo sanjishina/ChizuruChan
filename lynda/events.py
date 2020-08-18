@@ -16,7 +16,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from telethon import events
-from lynda import tbot
+from lynda import telethn
 
 
 def register(**args):

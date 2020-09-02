@@ -144,11 +144,9 @@ STATS_HANDLER = CommandHandler("stats", stats)
 
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(GIFID_HANDLER)
-dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 dispatcher.add_handler(STATS_HANDLER)
-dispatcher.add_handler(PING_HANDLER)
 
 __mod_name__ = "Misc"
 __command_list__ = ["id", "echo"]

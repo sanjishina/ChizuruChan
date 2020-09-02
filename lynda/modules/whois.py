@@ -10,7 +10,7 @@ import re
 import requests
 from telegram.error import BadRequest
 from telegram import Message, Chat, Update, Bot, MessageEntity
-import alluka.modules.helper_funcs.cas_api as cas
+import lynda.modules.helper_funcs.cas_api as cas
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html

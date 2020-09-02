@@ -21,6 +21,7 @@ CurrencyConverter
 googletrans
 jikanpy
 speedtest-cli
+speedtest
 coffeehouse
 typing
 gtts
@@ -35,3 +36,7 @@ spamwatch
 telethon
 pythonping
 gsearch
+datetime
+platform
+psutil
+telegram

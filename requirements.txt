@@ -36,6 +36,5 @@ telethon
 pythonping
 gsearch
 datetime
-platform
 psutil
 telegram

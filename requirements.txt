@@ -36,8 +36,4 @@ telethon
 pythonping
 gsearch
 datetime
-psutil
-telegram
-subprocess
-os
-html
+

@@ -91,98 +91,6 @@ def gifid(_bot: Bot, update: Update):
 
 
 @run_async
-def info(bot: Bot, update: Update, args: List[str]):
-    message = update.effective_message
-    chat = update.effective_chat
-    user_id = extract_user(update.effective_message, args)
-
-    if user_id:
-        user = bot.get_chat(user_id)
-
-    elif not message.reply_to_message and not args:
-        user = message.from_user
-
-    elif not message.reply_to_message and (not args or (
-            len(args) >= 1 and not args[0].startswith("@") and not args[0].isdigit() and not message.parse_entities(
-                [MessageEntity.TEXT_MENTION]))):
-        message.reply_text("I can't extract a user from this.")
-        return
-
-    else:
-        return
-
-    text = (f"<b>Characteristics:</b>\n"
-            f"ID: <code>{user.id}</code>\n"
-            f"First Name: {html.escape(user.first_name)}")
-
-    if user.last_name:
-        text += f"\nLast Name: {html.escape(user.last_name)}"
-
-    if user.username:
-        text += f"\nUsername: @{html.escape(user.username)}"
-
-    text += f"\nPermanent user link: {mention_html(user.id, 'link')}"
-
-    num_chats = sql.get_user_num_chats(user.id)
-    text += f"\nChat count: <code>{num_chats}</code>"
-
-    try:
-        user_member = chat.get_member(user.id)
-        if user_member.status == 'administrator':
-            result = requests.post(
-                f"https://api.telegram.org/bot{TOKEN}/getChatMember?chat_id={chat.id}&user_id={user.id}")
-            result = result.json()["result"]
-            if "custom_title" in result.keys():
-                custom_title = result['custom_title']
-                text += f"\nThis user holds the title <b>{custom_title}</b> here."
-    except BadRequest:
-        pass
-
-
-    if user.id == OWNER_ID:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">God</a>'
-    elif user.id in DEV_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Hero Union</a>'
-    elif user.id in SUDO_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Royal</a>'
-    elif user.id in SUPPORT_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Sakura</a>'
-    elif user.id in SARDEGNA_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Sardegna</a>'
-    elif user.id in WHITELIST_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Neptunia</a>'
-
-
-    text += "\n"
-    for mod in USER_INFO:
-        if mod.__mod_name__ == "Users":
-            continue
-
-        try:
-            mod_info = mod.__user_info__(user.id)
-        except TypeError:
-            mod_info = mod.__user_info__(user.id, chat.id)
-        if mod_info:
-            text += "\n" + mod_info
-
-    update.effective_message.reply_text(
-        text,
-        parse_mode=ParseMode.HTML,
-        disable_web_page_preview=True)
-
-
-@run_async
-def ping(bot: Bot, update: Update):
-    msg = update.effective_message
-    start_time = time.time()
-    message = msg.reply_text("Pinging...")
-    end_time = time.time()
-    ping_time = round((end_time - start_time) * 1000, 3)
-    message.edit_text("*Pong!!!*\n`{}ms`".format(ping_time),
-                      parse_mode=ParseMode.MARKDOWN)
-
-
-@run_async
 @user_admin
 def echo(_bot: Bot, update: Update):
     args = update.effective_message.text.split(None, 1)
@@ -221,15 +129,12 @@ def stats(_bot: Bot, update: Update):
 __help__ = """
  - /id: get the current group id. If used by replying to a message, gets that user's id.
  - /gifid: reply to a gif to me to tell you its file ID.
- - /info: get information about a user.
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
  - /karma - Coming soon
 """
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
 GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid)
-PING_HANDLER = DisableAbleCommandHandler("ping", ping)
-INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.group)
 MD_HELP_HANDLER = CommandHandler(
     "markdownhelp",
@@ -246,11 +151,10 @@ dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(PING_HANDLER)
 
 __mod_name__ = "Misc"
-__command_list__ = ["id", "info", "echo"]
+__command_list__ = ["id", "echo"]
 __handlers__ = [
     ID_HANDLER,
     GIFID_HANDLER,
-    INFO_HANDLER,
     ECHO_HANDLER,
     MD_HELP_HANDLER,
     STATS_HANDLER

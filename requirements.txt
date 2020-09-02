@@ -21,7 +21,6 @@ CurrencyConverter
 googletrans
 jikanpy
 speedtest-cli
-speedtest
 coffeehouse
 typing
 gtts

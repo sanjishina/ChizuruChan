@@ -34,4 +34,4 @@ nekos.py
 spamwatch
 telethon
 pythonping
-gserach
+gsearch

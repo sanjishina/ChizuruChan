@@ -91,17 +91,6 @@ def gifid(_bot: Bot, update: Update):
         
         
 @run_async
-def ping(bot: Bot, update: Update):
-    msg = update.effective_message
-    start_time = time.time()
-    message = msg.reply_text("Pinging...")
-    end_time = time.time()
-    ping_time = round((end_time - start_time) * 1000, 3)
-    message.edit_text("*Pong!!!*\n`{}ms`".format(ping_time),
-                      parse_mode=ParseMode.MARKDOWN)
-
-    
-@run_async
 @user_admin
 def echo(_bot: Bot, update: Update):
     args = update.effective_message.text.split(None, 1)
@@ -146,7 +135,6 @@ __help__ = """
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
 GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid)
-PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.group)
 MD_HELP_HANDLER = CommandHandler(
     "markdownhelp",
@@ -159,7 +147,6 @@ dispatcher.add_handler(GIFID_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 dispatcher.add_handler(STATS_HANDLER)
-dispatcher.add_handler(PING_HANDLER)
 
 __mod_name__ = "Misc"
 __command_list__ = ["id", "echo"]

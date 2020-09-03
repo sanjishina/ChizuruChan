@@ -36,4 +36,3 @@ telethon
 pythonping
 gsearch
 datetime
-cpuinfo

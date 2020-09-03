@@ -56,6 +56,11 @@ if ENV:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     try:
+        TIGER_USERS = set(int(x) for x in os.environ.get("TIGER_USERS", "").split())
+    except ValueError:
+        raise Exception("Your tiger users list does not contain valid integers.")
+
+    try:
         SARDEGNA_USERS = {int(x) for x in os.environ.get("SARDEGNA_USERS", "").split()}
     except ValueError:
         raise Exception("Your Sardegna users list does not contain valid integers.")
@@ -160,6 +165,7 @@ DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 SARDEGNA_USERS = list(SARDEGNA_USERS)
+TIGER_USERS = list(TIGER_USERS)
 SPAMMERS = list(SPAMMERS)
 
 # SpamWatch

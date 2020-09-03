@@ -37,3 +37,4 @@ pythonping
 gsearch
 datetime
 hurry
+hurry.filesize

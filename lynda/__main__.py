@@ -24,7 +24,7 @@ You can find the list of available commands with /help.
 
 Base @LyndaRobot
 ==========================
--> [Ruka's's Repo](https://github.com/Yashiro-San/Chizuru/)
+-> [Ruka's Repo](https://github.com/Yashiro-San/Chizuru/)
 ==========================
 `Maintained by` @Yashiro404
 
@@ -146,7 +146,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="📱 Rent Chizuru to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
+                [[InlineKeyboardButton(text="📱 Rent Ruka to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
                  [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/joinchat/MCPZ_li6GFtEIh5OcvOOsA"), InlineKeyboardButton(text="🚫 Global Logs", url="http://t.me/ChizuruxRukaGbanLog")],
                  [InlineKeyboardButton(text="❔ Help", callback_data="help_back"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/LyndaUpdateLogs")]])
             message.reply_photo(

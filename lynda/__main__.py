@@ -24,7 +24,7 @@ You can find the list of available commands with /help.
 
 Base @LyndaRobot
 ==========================
--> [Chizuru's's Repo](https://github.com/Yashiro-San/Chizuru/)
+-> [Ruka's's Repo](https://github.com/Yashiro-San/Chizuru/)
 ==========================
 `Maintained by` @Yashiro404
 
@@ -53,7 +53,7 @@ Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-LYNDA_IMG = "https://telegra.ph/file/5f62ea587b32eac2a40af.gif"
+LYNDA_IMG = "https://telegra.ph/file/2ac17ba3ebfd876ec22f7.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Chizuru is hosted on one of Heroku. \

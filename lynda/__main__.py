@@ -147,7 +147,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="📱 Rent Chizuru to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
-                 [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/LyndaEagleSupport"), InlineKeyboardButton(text="🚫 Global Logs", url="http://t.me/ChizuruxRukaGbanLog")],
+                 [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/joinchat/MCPZ_li6GFsPTpNNPPOsVQ"), InlineKeyboardButton(text="🚫 Global Logs", url="http://t.me/ChizuruxRukaGbanLog")],
                  [InlineKeyboardButton(text="❔ Help", callback_data="help_back"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/LyndaUpdateLogs")]])
             message.reply_photo(
                 LYNDA_IMG,

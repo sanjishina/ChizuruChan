@@ -24,7 +24,7 @@ You can find the list of available commands with /help.
 
 Base @LyndaRobot
 ==========================
--> [Ruka's Repo](https://github.com/Yashiro-San/Chizuru/)
+-> [Chizuru's Repo](https://github.com/Yashiro-San/Chizuru/)
 ==========================
 `Maintained by` @Yashiro404
 
@@ -53,7 +53,7 @@ Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-LYNDA_IMG = "https://telegra.ph/file/2ac17ba3ebfd876ec22f7.jpg"
+LYNDA_IMG = "https://telegra.ph/file/d99a35ca14f8a1b01abbf.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 Chizuru is hosted on one of Heroku. \
@@ -146,7 +146,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="📱 Rent Ruka to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
+                [[InlineKeyboardButton(text="📱 Rent Chizuru to your group", url="https://t.me/ChizuruChanBot?startgroup=new")],
                  [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/joinchat/MCPZ_li6GFtEIh5OcvOOsA"), InlineKeyboardButton(text="🚫 Global Logs", url="http://t.me/ChizuruxRukaGbanLog")],
                  [InlineKeyboardButton(text="❔ Help", callback_data="help_back"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/LyndaUpdateLogs")]])
             message.reply_photo(

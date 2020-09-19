@@ -34,7 +34,7 @@ def blacklist(_bot: Bot, update: Update, args: List[str]):
 
     filter_list = base_blacklist_string
 
-    if len(args) > 0 and args[0].lower() == 'copy':
+    if args and args[0].lower() == 'copy':
         for trigger in all_blacklisted:
             filter_list += f"<code>{html.escape(trigger)}</code>\n"
     else:
@@ -150,10 +150,8 @@ def del_blacklist(_bot: Bot, update: Update):
             try:
                 message.delete()
             except BadRequest as excp:
-                if excp.message == "Message to delete not found":
-                    pass
-                else:
-                    LOGGER.exception("Error while deleting blacklist message.")
+                if excp.message != 'Message to delete not found':
+                    LOGGER.exception('Error while deleting blacklist message.')
             break
 
 
@@ -182,7 +180,6 @@ lines will allow you to add multiple triggers.
  - /unblacklist <triggers>: Remove triggers from the blacklist. Same newline logic applies here, so you can remove \
 multiple triggers at once.
  - /rmblacklist <triggers>: Same as above.
-
 Blacklist sticker is used to stop certain stickers. Whenever a sticker is sent, the message will be deleted immediately.
 *NOTE:* Blacklist stickers do not affect the group admin.
  - /blsticker: See current blacklisted sticker.

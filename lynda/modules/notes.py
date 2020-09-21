@@ -184,7 +184,7 @@ def save(_bot: Bot, update: Update):
         file=content)
 
     msg.reply_text(
-        f"Yey your notes have been saved '`{note_name}`' in *{chat_name}*.\nGet it with `/get {note_name}`, or `#{note_name}`!")
+        f"Yey your notes have been saved '`{note_name}`'.\nGet it with `/get {note_name}`, or `#{note_name}`!")
 
     if msg.reply_to_message and msg.reply_to_message.from_user.is_bot:
         if text:

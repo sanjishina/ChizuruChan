@@ -222,7 +222,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
         bot.send_message(
             user_id,
             "You have been globally banned from all groups where I have administrative permissions."
-            "If you think that this was a mistake, you may appeal your ban here: @LyndaEagleSupport",
+            "If you think that this was a mistake, you may appeal your ban PM my master.",
             parse_mode=ParseMode.HTML)
     except Exception as e:
         print(e)
@@ -385,7 +385,7 @@ def check_and_ban(update, user_id, should_message=True):
             update.effective_message.reply_text(
                 "Alert: This user is globally banned.\n"
                 "*bans them from here*.\n"
-                "Appeal chat: @YorktownEagleUnion")
+                "PM my master for unban")
 
 
 @run_async
@@ -451,7 +451,7 @@ def __user_info__(user_id):
         user = sql.get_gbanned_user(user_id)
         if user.reason:
             text += f"\n<b>Reason:</b> {html.escape(user.reason)}"
-        text += "\n<b>Appeal Chat:</b> @LyndaEagleSupport"
+        text += "\n<b>Appeal Chat:</b> PM my master."
     else:
         text = text.format("No")
     return text
@@ -472,7 +472,7 @@ Note: You can appeal gbans or ask gbans at @LyndaEagleSupport
 Lynda also integrates @Spamwatch API into gbans to remove Spammers as much as possible from your chatroom!
 *What is SpamWatch?*
 SpamWatch maintains a large constantly updated ban-list of spambots, trolls, bitcoin spammers and unsavoury characters[.](https://telegra.ph/file/ac12a2c6b831dd005015b.jpg)
-Lynda will constantly help banning spammers off from your group automatically So, you don't have to worry about spammers storming your group.
+Chizuru will constantly help banning spammers off from your group automatically So, you don't have to worry about spammers storming your group.
 """
 
 GBAN_HANDLER = CommandHandler("gban", gban, pass_args=True)

@@ -568,7 +568,18 @@ def kayo(bot: Bot, update: Update):
     site_search(bot, update, "kayo")
 
 
-__help__ = True
+__help__ = """
+Get information about anime, manga or characters from [AniList](anilist.co).
+*Available commands:*
+ • `/anime <anime>`*:* returns information about the anime.
+ • `/character <character>`*:* returns information about the character.
+ • `/manga <manga>`*:* returns information about the manga.
+ • `/user <user>`*:* returns information about a MyAnimeList user.
+ • `/upcoming`*:* returns a list of new anime in the upcoming seasons.
+ • `/kaizoku <anime>`*:* search an anime on animekaizoku.com
+ • `/kayo <anime>`*:* search an anime on animekayo.com
+ • `/airing <anime>`*:* returns anime airing info.
+ """
 
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime)
 AIRING_HANDLER = DisableAbleCommandHandler("airing", airing)
@@ -579,6 +590,12 @@ UPCOMING_HANDLER = DisableAbleCommandHandler("upcoming", upcoming)
 KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku)
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo)
 BUTTON_HANDLER = CallbackQueryHandler(button, pattern='anime_.*')
+
+__mod_name__ = "Anime"
+__command_list__ = [
+    "anime", "manga", "character", "user", "upcoming", "kaizoku", "airing",
+    "kayo"
+]
 
 dispatcher.add_handler(BUTTON_HANDLER)
 dispatcher.add_handler(ANIME_HANDLER)

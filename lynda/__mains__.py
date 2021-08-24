@@ -26,7 +26,7 @@ Base @LyndaRobot
 ==========================
 -> [Chizuru's Repo](https://github.com/Yashiro-San/Chizuru/)
 ==========================
-`Maintained by` @Yashiro404
+`Maintained by` @sparkysunny
 
 """
 
@@ -37,7 +37,7 @@ I'm a management bot.
 Have a look at the following for an idea of some of \
 the things I can help you with.
 
-I'm managed by [Yashi](https://t.me/Yashiro404)
+I'm managed by [Yashi](https://t.me/sparkysunny)
 Chatbot module from [TheRealPhoenixBot](https://github.com/rsktg/TheRealPhoenixBot.git)
 Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot)
 *Main* commands available:
@@ -53,12 +53,7 @@ Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-LYNDA_IMG = "https://telegra.ph/file/d99a35ca14f8a1b01abbf.jpg"
-
-DONATE_STRING = """Heya, glad to hear you want to donate!
-Chizuru is hosted on one of Heroku. \
-You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/muhnurfauzan73),."""
+LYNDA_IMG = "https://telegra.ph/file/19896d4051fd8b2e5cc0e.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
